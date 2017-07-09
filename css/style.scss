@@ -58,7 +58,7 @@ pad {
   margin: 1rem;
 }
 
-#new-item, #options, #shaft {
+#new-item, #options, #shaft, header {
   @extend pad;
 }
 
@@ -136,7 +136,9 @@ header {
           flex-direction: row;
   min-height: 4.4rem;
   padding: 1rem;
-  margin: 5rem 0 0;
+  @include MQ(M) {
+    margin: 5rem 0 0;
+  }
   &.error {
     -webkit-animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
             animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
