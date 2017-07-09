@@ -34,6 +34,7 @@ html {
   background: $color-2;
   font-size: 62.5%;
   color: $color-5;
+  line-height: 1.5;
 }
 
 body {
@@ -101,6 +102,12 @@ header {
   background: $color-2;
   color: $color-5;
   text-align: center;
+  h1 {
+    font-size: 1.2em;
+    @include MQ(M) {
+      font-size: 2em;
+    }
+  }
   a, a:hover, a:visited {
     color: $color-5;
     text-decoration:none;
@@ -209,7 +216,6 @@ header {
 #options {
   border-left: 0;
   border-right: 0;
-  line-height: 5rem;
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
@@ -222,6 +228,7 @@ header {
     padding: 0;
     li {
       border-bottom: 1px solid;
+      line-height: 5rem;
       &:last-of-type {
         border-bottom: 0;
       }
