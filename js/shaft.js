@@ -20,6 +20,7 @@ function addOption() {
 function removeOption() {
   var id = this.getAttribute('id');
   options.splice(id, 1);
+  manopt.splice(id, 1);
   showOptions();
   return false;
 };
