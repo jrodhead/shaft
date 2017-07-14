@@ -28,7 +28,7 @@ function removeOption() {
 function showOptions() {
   var optionList = '<ul>';
   for(var i=0; i<options.length; i++) {
-    optionList += '<li><span class="name">' + options[i] + '<span class="remove" id="' + i + '"><i class="material-icons">remove_circle</i></span></span></li>';
+    optionList += '<li><span class="name">' + options[i] + '</span><span class="remove" id="' + i + '"><i class="material-icons">remove_circle</i></span></li>';
   };
   optionList += '</ul>';
   document.getElementById('options').innerHTML = optionList;
