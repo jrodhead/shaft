@@ -1,13 +1,59 @@
 html {
-  background: #75a580;
-  font-size: 62.5%;
+  background: #455567;
   color: #f2efe5;
+  font-size: 62.5%;
   line-height: 1.5;
 }
 
 body {
+  background: radial-gradient(circle at top, #75a580 0%, #455567 75%);
   font-size: 1.6rem;
-  font-family: "Cardo", serif;
+  font-family: "Zilla Slab", serif;
+  height: 100vh;
+}
+
+body.scrolled #page {
+  margin-top: 100px;
+}
+
+body.scrolled #new-item {
+  left: 0;
+  margin: 1em;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  body.scrolled #new-item {
+    left: 1em;
+    right: 1em;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  body.scrolled #new-item {
+    left: 7em;
+    right: 7em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  body.scrolled #new-item {
+    left: 14em;
+    right: 14em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body.scrolled #new-item {
+    left: 25%;
+    right: 25%;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Bungee", sans-serif;
 }
 
 #page {
@@ -23,14 +69,14 @@ body {
   padding: 0 2rem;
 }
 
-pad, #new-item, #options, #shaft, header {
+pad, #new-item, #options, #shaft {
   margin: 1rem;
 }
 
 input {
   background: none;
   border: 0;
-  font-family: "Cardo", serif;
+  font-family: "Zilla Slab", serif;
   line-height: 1.5;
   padding: 1rem;
 }
@@ -42,7 +88,7 @@ button {
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
   color: #f2efe5;
-  font-family: "Julius Sans One", sans-serif;
+  font-family: "Bungee", sans-serif;
   padding: 1.5rem;
 }
 
@@ -65,13 +111,14 @@ i:hover {
 }
 
 header {
-  background: #75a580;
-  color: #f2efe5;
+  background: #f2efe5;
+  color: #75a580;
   text-align: center;
 }
 
 header h1 {
   font-size: 1.2em;
+  margin: 0;
 }
 
 @media only screen and (min-width: 800px) {
@@ -115,11 +162,14 @@ header div {
   flex-direction: row;
   min-height: 4.4rem;
   padding: 1rem;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
+  width: auto;
 }
 
 @media only screen and (min-width: 800px) {
   #new-item {
-    margin: 5rem 0 0;
+    margin: 4rem 0 0;
   }
 }
 

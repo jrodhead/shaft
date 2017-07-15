@@ -6,6 +6,7 @@ var options = []; // array that will store all added options
 function addOption() {
   var manadd = document.getElementById('create-choice');
   var error = document.getElementById('new-item');
+  var optElem = document.getElementById('options');
   if (manadd.value==='') {
     $(error).addClass('error');
   } else {
@@ -13,6 +14,7 @@ function addOption() {
     manopt.push(manadd.value);
     options = manopt.concat(placeopt); //combine manual/place options to options array
     showOptions();
+    optElem.scrollIntoView(false);
   }
 };
 
@@ -83,3 +85,13 @@ $("#create-choice").on('keyup', function (e) {
 });
 document.getElementById('add').addEventListener('click', addOption);
 document.getElementById('shaft').addEventListener('click', shaft);
+
+//add class when scrolled so input can be sticky
+$(window).scroll(function() {
+  var scroll = $(window).scrollTop();
+  if (scroll >= 40) {
+    $("body").addClass("scrolled");
+  } else {
+    $("body").removeClass("scrolled");
+  }
+});

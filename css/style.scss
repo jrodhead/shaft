@@ -6,14 +6,15 @@ $color-3: #907b60;
 $color-4: #455567;
 $color-5: #f2efe5;
 
-$primary-font: 'Cardo', serif;
-$secondary-font: 'Julius Sans One', sans-serif;
+$primary-font: 'Zilla Slab', serif;
+$secondary-font: 'Bungee', sans-serif;
 
 // breakpoints
 
 $S: 600px;
 $M: 800px;
 $L: 1000px;
+$XL: 1200px;
 
 // media queries
 
@@ -27,19 +28,56 @@ $L: 1000px;
   @else if $canvas == L {
    @media only screen and (min-width: $L) { @content; }
   }
+  @else if $canvas == XL {
+   @media only screen and (min-width: $XL) { @content; }
+  }
 }
 
 //
 html {
-  background: $color-2;
-  font-size: 62.5%;
+  background: $color-4;
   color: $color-5;
+  font-size: 62.5%;
   line-height: 1.5;
 }
 
 body {
+  background: radial-gradient(circle at top, $color-2 0%, $color-4 75%);
 	font-size: 1.6rem;
 	font-family: $primary-font;
+  height: 100vh;
+  &.scrolled {
+    #page {
+      margin-top: 100px; // fix bug that causes .scrolled #new-item not to stick at specific heights
+    }
+    #new-item {
+      left: 0;
+      margin: 1em;
+      position: fixed;
+      right: 0;
+      top: 0;
+      @include MQ(S) {
+        left: 1em;
+        right: 1em;
+      }
+      @include MQ(M) {
+        left: 7em;
+        right: 7em;
+      }
+      @include MQ(L) {
+        left: 14em;
+        right: 14em;
+      }
+      @include MQ(XL) {
+        left: 25%;
+        right: 25%;
+      }
+    }
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $secondary-font;
 }
 
 #page {
@@ -59,7 +97,7 @@ pad {
   margin: 1rem;
 }
 
-#new-item, #options, #shaft, header {
+#new-item, #options, #shaft {
   @extend pad;
 }
 
@@ -99,11 +137,12 @@ i {
 // header
 
 header {
-  background: $color-2;
-  color: $color-5;
+  background: $color-5;
+  color: $color-2;
   text-align: center;
   h1 {
     font-size: 1.2em;
+    margin: 0;
     @include MQ(M) {
       font-size: 2em;
     }
@@ -143,8 +182,11 @@ header {
           flex-direction: row;
   min-height: 4.4rem;
   padding: 1rem;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
+  width: auto;
   @include MQ(M) {
-    margin: 5rem 0 0;
+    margin: 4rem 0 0;
   }
   &.error {
     -webkit-animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
