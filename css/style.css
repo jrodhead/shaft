@@ -1,13 +1,19 @@
 html {
   background: #75a580;
-  font-size: 62.5%;
+  background: radial-gradient(ellipse at top, #75a580 0%, #455567 100%);
   color: #f2efe5;
+  font-size: 62.5%;
+  height: 100%;
   line-height: 1.5;
 }
 
 body {
   font-size: 1.6rem;
-  font-family: "Cardo", serif;
+  font-family: "Zilla Slab", serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Bungee", sans-serif;
 }
 
 #page {
@@ -23,14 +29,14 @@ body {
   padding: 0 2rem;
 }
 
-pad, #new-item, #options, #shaft, header {
+pad, #new-item, #options, #shaft {
   margin: 1rem;
 }
 
 input {
   background: none;
   border: 0;
-  font-family: "Cardo", serif;
+  font-family: "Zilla Slab", serif;
   line-height: 1.5;
   padding: 1rem;
 }
@@ -42,7 +48,7 @@ button {
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
   color: #f2efe5;
-  font-family: "Julius Sans One", sans-serif;
+  font-family: "Bungee", sans-serif;
   padding: 1.5rem;
 }
 
@@ -65,13 +71,14 @@ i:hover {
 }
 
 header {
-  background: #75a580;
-  color: #f2efe5;
+  background: #f2efe5;
+  color: #75a580;
   text-align: center;
 }
 
 header h1 {
   font-size: 1.2em;
+  margin: 0;
 }
 
 @media only screen and (min-width: 800px) {
@@ -119,7 +126,7 @@ header div {
 
 @media only screen and (min-width: 800px) {
   #new-item {
-    margin: 5rem 0 0;
+    margin: 4rem 0 0;
   }
 }
 

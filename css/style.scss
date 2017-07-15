@@ -6,8 +6,8 @@ $color-3: #907b60;
 $color-4: #455567;
 $color-5: #f2efe5;
 
-$primary-font: 'Cardo', serif;
-$secondary-font: 'Julius Sans One', sans-serif;
+$primary-font: 'Zilla Slab', serif;
+$secondary-font: 'Bungee', sans-serif;
 
 // breakpoints
 
@@ -32,14 +32,20 @@ $L: 1000px;
 //
 html {
   background: $color-2;
-  font-size: 62.5%;
+  background: radial-gradient(ellipse at top, $color-2 0%, $color-4 100%);
   color: $color-5;
+  font-size: 62.5%;
+  height: 100%;
   line-height: 1.5;
 }
 
 body {
 	font-size: 1.6rem;
 	font-family: $primary-font;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $secondary-font;
 }
 
 #page {
@@ -59,7 +65,7 @@ pad {
   margin: 1rem;
 }
 
-#new-item, #options, #shaft, header {
+#new-item, #options, #shaft {
   @extend pad;
 }
 
@@ -99,11 +105,12 @@ i {
 // header
 
 header {
-  background: $color-2;
-  color: $color-5;
+  background: $color-5;
+  color: $color-2;
   text-align: center;
   h1 {
     font-size: 1.2em;
+    margin: 0;
     @include MQ(M) {
       font-size: 2em;
     }
@@ -144,7 +151,7 @@ header {
   min-height: 4.4rem;
   padding: 1rem;
   @include MQ(M) {
-    margin: 5rem 0 0;
+    margin: 4rem 0 0;
   }
   &.error {
     -webkit-animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
