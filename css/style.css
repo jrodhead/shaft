@@ -1,15 +1,55 @@
 html {
-  background: #75a580;
-  background: radial-gradient(ellipse at top, #75a580 0%, #455567 100%);
+  background: #455567;
   color: #f2efe5;
   font-size: 62.5%;
-  height: 100%;
   line-height: 1.5;
 }
 
 body {
+  background: radial-gradient(circle at top, #75a580 0%, #455567 75%);
   font-size: 1.6rem;
   font-family: "Zilla Slab", serif;
+  height: 100vh;
+}
+
+body.scrolled #page {
+  margin-top: 100px;
+}
+
+body.scrolled #new-item {
+  left: 0;
+  margin: 1em;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  body.scrolled #new-item {
+    left: 1em;
+    right: 1em;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  body.scrolled #new-item {
+    left: 7em;
+    right: 7em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  body.scrolled #new-item {
+    left: 14em;
+    right: 14em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body.scrolled #new-item {
+    left: 25%;
+    right: 25%;
+  }
 }
 
 h1, h2, h3, h4, h5 {
@@ -122,6 +162,9 @@ header div {
   flex-direction: row;
   min-height: 4.4rem;
   padding: 1rem;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
+  width: auto;
 }
 
 @media only screen and (min-width: 800px) {
