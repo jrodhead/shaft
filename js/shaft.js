@@ -85,13 +85,3 @@ $("#create-choice").on('keyup', function (e) {
 });
 document.getElementById('add').addEventListener('click', addOption);
 document.getElementById('shaft').addEventListener('click', shaft);
-
-//add class when scrolled so input can be sticky
-$(window).scroll(function() {
-  var scroll = $(window).scrollTop();
-  if (scroll >= 40) {
-    $("body").addClass("scrolled");
-  } else {
-    $("body").removeClass("scrolled");
-  }
-});
