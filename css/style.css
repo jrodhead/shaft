@@ -202,7 +202,7 @@ header div {
   -ms-flex: 2;
   flex: 2;
   margin: 0;
-  padding: 0 2rem 50% 2rem;
+  padding: 0 2rem 65% 2rem;
 }
 
 @media only screen and (min-width: 800px) {
