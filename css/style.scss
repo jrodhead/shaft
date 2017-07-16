@@ -43,44 +43,6 @@ html {
 
 body {
   background: radial-gradient(circle at top, $color-2 0%, $color-4 75%);
-	font-size: 1.6rem;
-	font-family: $primary-font;
-  height: 100vh;
-  &.scrolled {
-    #page {
-      margin-top: 100px; // fix bug that causes .scrolled #new-item not to stick at specific heights
-    }
-    #new-item {
-      left: 0;
-      margin: 1em;
-      position: fixed;
-      right: 0;
-      top: 0;
-      @include MQ(S) {
-        left: 1em;
-        right: 1em;
-      }
-      @include MQ(M) {
-        left: 7em;
-        right: 7em;
-      }
-      @include MQ(L) {
-        left: 14em;
-        right: 14em;
-      }
-      @include MQ(XL) {
-        left: 25%;
-        right: 25%;
-      }
-    }
-  }
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: $secondary-font;
-}
-
-#page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,9 +50,20 @@ h1, h2, h3, h4, h5 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 auto;
-  max-width: 50rem;
-  padding: 0 2rem;
+	font-size: 1.6rem;
+	font-family: $primary-font;
+  height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $secondary-font;
+}
+
+#page {
+  @include MQ(S) {
+    margin: 0 auto;
+    width: 50rem;
+  }
 }
 
 pad {
@@ -180,14 +153,15 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin: 2.5rem 1rem 1rem 1rem;
   min-height: 4.4rem;
   padding: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
   -webkit-transition: .3s ease-in;
   transition: .3s ease-in;
   width: auto;
-  @include MQ(M) {
-    margin: 4rem 0 0;
-  }
   &.error {
     -webkit-animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
             animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -262,8 +236,10 @@ header {
       -ms-flex: 2;
           flex: 2;
   margin: 0;
-  overflow: auto;
-  padding: 2rem;
+  padding: 0 2rem 50% 2rem;
+  @include MQ(M) {
+    padding-bottom: 0;
+  }
   ul {
     list-style: none;
     margin: 0;
