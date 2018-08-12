@@ -23,6 +23,15 @@ h1, h2, h3, h4, h5 {
   font-family: "Bungee", sans-serif;
 }
 
+.error {
+  background: #f2efe5;
+  border-top: 3px solid #f5815f;
+  border-bottom: 3px solid #f5815f;
+  color: #f5815f;
+  padding: 1em;
+  text-align: center;
+}
+
 @media only screen and (min-width: 600px) {
   #page {
     margin: 0 auto;
@@ -237,6 +246,10 @@ header div {
 
 #options ul li .remove i {
   padding: 1.5rem 0;
+}
+
+#options .error {
+  margin-top: 1.5em;
 }
 
 #choice {

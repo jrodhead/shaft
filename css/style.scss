@@ -9,6 +9,9 @@ $color-5: #f2efe5;
 $primary-font: 'Zilla Slab', serif;
 $secondary-font: 'Bungee', sans-serif;
 
+$error: $color-1;
+$success: #2780e3;
+
 // breakpoints
 
 $S: 600px;
@@ -57,6 +60,15 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: $secondary-font;
+}
+
+.error {
+  background: $color-5;
+  border-top: 3px solid $error;
+  border-bottom: 3px solid $error;
+  color: $error;
+  padding: 1em;
+  text-align: center;
 }
 
 #page {
@@ -264,6 +276,9 @@ header {
         }
       }
     }
+  }
+  .error {
+    margin-top: 1.5em;
   }
 }
 

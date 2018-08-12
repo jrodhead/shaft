@@ -5,14 +5,27 @@ function resetChoice() { //reset create-choice for faster input
   blank.value = '';
 }
 
+function errBox(errText, errPar) { //error display
+  var errBox = document.createElement('div');
+  errBox.className = 'error';
+  errBox.innerHTML = '<p>' + errText + '</p>';
+  var refChild = errPar.firstChild;
+  errPar.insertBefore(errBox, refChild);
+}
+
+function attention(elem, className) { //add a class then remove it after a set time
+  $(elem).addClass(className);
+  setTimeout(function() {$(elem).removeClass(className)}, 500);
+}
+
 function addOption() { //get create-choice input value and add to options array
   var manadd = document.getElementById('create-choice');
-  var error = document.getElementById('new-item');
   var optElem = document.getElementById('options');
+  var errPar = document.getElementById('options');
   if (manadd.value==='') {
-    $(error).addClass('error');
+    attention(document.getElementById('new-item'), 'error');
+    errBox('Whoops! Please type something into the input box to add it to your list.', errPar);
   } else {
-    $(error).removeClass('error');
     options.push({'id':manadd.value,'type':'manual','name':manadd.value});
     ga('send', 'event', 'Add Option', 'Submit', manadd.value); //Google Analytics event tracking
     showOptions();
@@ -74,15 +87,15 @@ function shaftAnimate() { //randomize and animate to display decision from optio
 };
 
 function shaft() { //initiate decision and error handling
-  var errors = document.getElementById('options');
+  var errPar = document.getElementById('options');
   if (options.length > 1) {
     shaftAnimate();
   } else if (options.length === 1) {
-    errors.innerHTML = '<p>This would be more fun if there were multiple choices.</p>'
+    errBox('This would be more fun if there were multiple options.', errPar);
   } else if (options != null) {
-    errors.innerHTML = '<p>add something.</p>';
+    errBox('Whoops! Use the input box above to enter at least 2 options.', errPar);
   } else {
-    errors.innerHTML = '<p>Something went wrong... try again?</p>';
+    errBox('Something went wrong... try again?', errPar);
   };
 };
 
