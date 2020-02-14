@@ -1,11 +1,4 @@
-var options = [
-  {id: "Brian", type: "manual", name: "Brian"},
-  {id: "Derrick", type: "manual", name: "Derrick"},
-  {id: "Kelly", type: "manual", name: "Kelly"},
-  {id: "Jameson", type: "manual", name: "Jameson"},
-  {id: "Jared", type: "manual", name: "Jared"},
-  {id: "Matt", type: "manual", name: "Matt"}
-]; // array that will store all added options
+var options = []; // array that will store all added options
 
 function resetChoice() { //reset create-choice for faster input
   var blank = document.getElementById('create-choice');
@@ -113,5 +106,3 @@ $("#create-choice").on('keyup', function (e) {
 });
 document.getElementById('add').addEventListener('click', addOption);
 document.getElementById('shaft').addEventListener('click', shaft);
-
-showOptions();
